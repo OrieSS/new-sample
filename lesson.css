@@ -29,6 +29,7 @@
 }
 .lesson_title p{
     font-weight: bold;
+	color: blue;
 }
 .mon{
     width: 40%;
