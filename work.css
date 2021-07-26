@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.article{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: 30px 4fr 1fr 1fr;
+}

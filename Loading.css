@@ -1,0 +1,544 @@
+@charset "utf-8";
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  
+}
+.black{
+  background: #000;
+  color: #fff;
+}
+.blue{
+  background-color: #67feef;
+  color: #000;
+}
+
+video {
+  width: 100%;
+    height: 600px;
+    object-fit:cover;
+    margin: auto;
+}
+img{
+  width:100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  }
+.play_center{
+  position: relative;
+  width: 200%;
+  top: -350px;
+  right: 100%;
+
+}
+.play{
+  position: absolute;
+  height: 0%;
+  top: 50%;
+  left: 50%;
+
+  z-index: 99;
+}
+.contents{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contents .navi{
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 5%;
+    z-index: 1;
+}
+.yu-ki {
+  width: 100%;
+  height: 600px;
+  object-fit:cover;
+  margin: auto;
+}
+.display{
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    top: 100px;
+    left: 10%;
+    width: 80%;    /* 横幅を割合で指定 */
+    height: auto; 
+
+}
+
+
+.display_on{
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  top: 130px;
+  left: 0%;
+  z-index: 2;
+  width: 80%;    /* 横幅を割合で指定 */
+  height: auto; 
+}
+
+.display_off{
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  top: 130px;
+  left: 20%;
+  z-index: 3;
+  width: 80%;    /* 横幅を割合で指定 */
+  height: auto;
+  color: #333; 
+}
+
+
+/*botttun基本と主な共通部分は省略*/
+.btn-right-radius {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  border-radius: 0 15px 15px 0;
+  transition: .4s;
+}
+
+.btn-right-radius:hover {
+  background: #636363;
+}
+
+#link_on{
+  position: absolute;
+  width: 20%;
+  height: 10%;
+  top: 45%;
+  left: 15%;
+  z-index: 0;
+  opacity: 0;
+}
+#link_on:hover{
+  background-color: #333;
+  transition-duration: 300ms;
+  transform: translate(5px,5px) ;
+  transform: scale3d(0.9,0.8,1);
+  opacity: 0.6;
+}
+#link_off{
+  position: absolute;
+  width: 20%;
+  height: 10%;
+  top: 45%;
+  left: 40%;
+  z-index: 0;
+  opacity: 0;
+}
+#link_off:hover{
+  /* transform-origin: -50% 100%;*/
+  background-color: #333;
+  transition-duration: 300ms;
+  transform: translate(5px,5px) ;
+  transform: scale3d(0.9,0.8,1);
+  opacity: 0.6;
+}
+@keyframes animationOn {
+  0%{
+    top: 45%;
+  }
+  100%{
+    top: 55%;
+    height: 0%;
+  }
+}
+.loading{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    z-index: 9999;
+  }
+.loading a{
+    text-align: center;
+    position: relative;
+    top: 100px;
+    left: 145px;
+}
+.loading h3{
+  font-size: 60px;
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+.animation_top{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+  .animation{
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #fff;
+    -webkit-animation: lodanimetion 1500ms ease-out forwards infinite;
+    animation: lodanimetion 1500ms ease-out forwards infinite;
+    z-index: 0;
+  }
+  .circle_state{
+    position: relative;
+    width: 200%;
+    top: -400px;
+    right: 100%;
+  }
+  @keyframes lodanimetion {
+    from,to {
+      opacity: 0;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
+  .loader {
+    font-size: 10px;
+    margin: 100px auto;
+    text-indent: -9999em;
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    background: #ffffff;
+    background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  .loader:before {
+    width: 50%;
+    height: 50%;
+    background: #ffffff;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+  .loader:after {
+    background: #0a0c0c;
+    width: 99%;
+    height: 99%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  @-webkit-keyframes load3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes load3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  .fulfilling-bouncing-circle-spinner, .fulfilling-bouncing-circle-spinner * {
+    box-sizing: border-box;
+  }
+
+  .fulfilling-bouncing-circle-spinner {
+    height: 400px;
+    width: 400px;
+    margin: 180px auto;
+    position: relative;
+    animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
+  }
+
+  .fulfilling-bouncing-circle-spinner .orbit {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    border-radius: 50%;
+    border: calc(60px * 0.03) solid #fff;
+    animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
+  }
+
+  .fulfilling-bouncing-circle-spinner .circle {
+    height: 400px;
+    width: 400px;
+    color: #fff;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    border: calc(60px * 0.1) solid #fff;
+    animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
+    transform: rotate(0deg) scale(1);
+  }
+
+  @keyframes fulfilling-bouncing-circle-spinner-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fulfilling-bouncing-circle-spinner-orbit-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    62.5% {
+      transform: scale(0.8);
+    }
+    75% {
+      transform: scale(1);
+    }
+    87.5% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fulfilling-bouncing-circle-spinner-circle-animation {
+    0% {
+      transform: scale(1);
+      border-color: transparent;
+      border-top-color: inherit;
+    }
+    16.7% {
+      border-color: transparent;
+      border-top-color: initial;
+      border-right-color: initial;
+    }
+    33.4% {
+      border-color: transparent;
+      border-top-color: inherit;
+      border-right-color: inherit;
+      border-bottom-color: inherit;
+    }
+    50% {
+      border-color: inherit;
+      transform: scale(1);
+    }
+    62.5% {
+      border-color: inherit;
+      transform: scale(1.4);
+    }
+    75% {
+      border-color: inherit;
+      transform: scale(1);
+      opacity: 1;
+    }
+    87.5% {
+      border-color: inherit;
+      transform: scale(1.4);
+    }
+    100% {
+      border-color: transparent;
+      border-top-color: inherit;
+      transform: scale(1);
+    }
+  }
+  .moving{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .moving.show{
+    display: inline;
+    visibility: visible;
+    opacity: 1;
+  }
+ .navbar.navbar-expand-lg.navbar-light.bg-light{
+   display: none;
+   z-index: 2;
+ }
+
+ .index{
+  display: none;
+ } 
+.lesson{
+  display: none;
+}
+ 
+.work{
+  display: none;
+}
+.movie_id{
+  display: none;
+}
+.profile{
+  display: none;
+}
+.contact{
+  display: none;
+}
+
+
+/*iPad 375に直す*/
+@media screen and (min-width:600px){
+  
+  video{
+    width: 100%;
+    height: 700px;
+    object-fit:cover;
+ }
+ .play_center{
+  position: relative;
+  width: 200%;
+  height: 100%;
+  top: -350px;
+  right: 100%;
+
+}
+
+ .display{
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  top: 100px;
+  left: 20%;
+  z-index: 1;
+  width: 70%;    /* 横幅を割合で指定 */
+  height: auto;
+
+}
+.display_on{
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  top: 110px;
+  left: 5%;
+  z-index: 1;
+  width: 80%;    /* 横幅を割合で指定 */
+  height: auto;
+}
+.display_off{
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  top: 110px;
+  left: 25%;
+  z-index: 1;
+  width: 80%;    /* 横幅を割合で指定 */
+  height: auto;
+}
+
+
+}
+/*PC*/
+ @media screen and (min-width:835px){
+   /*画面幅が781px以上の時*/
+   video{
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+ }
+ img{
+  grid-row: 2;
+ }
+ .play_center{
+  position: relative;
+  width: 200%;
+  top: -350px;
+  right: 100%;
+
+}
+
+ .display{
+  margin: 0 auto;
+  position: absolute;
+  top: 100px;
+  left: 25%;
+  z-index: 1;
+  width: 50%;    /* 横幅を割合で指定 */
+  height: auto; 
+  
+
+}
+.display_on{
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  top: 100px;
+  left: 13%;
+  z-index: 1;
+  width: 60%;    /* 横幅を割合で指定 */
+  height: auto;
+
+}
+.display_off{
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  top: 100px;
+  left: 27%;
+  z-index: 1;
+  width: 60%;    /* 横幅を割合で指定 */
+  height: auto;
+ 
+}
+#link_on{
+  width: 20%;
+  height: 10%;
+  top: 45%;
+  left: 17%;
+}
+#link_off{
+  width: 20%;
+  height: 10%;
+  top: 45%;
+  left: 40%;
+}
+
+ }
+
+/*これ以上は*/
+@media screen and (min-width:1500px){
+
+  .play_center{
+    position: relative;
+    width: 200%;
+    top: -430px;
+    right: 100%;
+
+    padding: 0 10% 0 10%;
+  }
+
+}
